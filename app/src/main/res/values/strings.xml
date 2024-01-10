@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Punk Beer</string>
+    <string name="punk_beer">Punk Beer</string>
+    <string name="details">Details</string>
+    <string name="back_button">Back Button</string>
+    <string name="error">Error Image</string>
+    <string name="generic_error">Uh oh! I appears there was an error!</string>
+</resources>
