@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                MainScreen(onNavigationIconClick = ::onNavigationIconClick, viewModel = viewModel)
+                MainScreen(viewModel = viewModel)
             }
         }
     }

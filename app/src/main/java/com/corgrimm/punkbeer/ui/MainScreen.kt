@@ -1,6 +1,5 @@
 package com.corgrimm.punkbeer.ui
 
-import android.util.Log
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -29,7 +28,6 @@ const val BEER_DETAILS_ROUTE = "Beer Details"
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
-    onNavigationIconClick: (navigated: Boolean) -> Unit,
     viewModel: BeerViewModel,
 ) {
     val navHostController = rememberNavController()

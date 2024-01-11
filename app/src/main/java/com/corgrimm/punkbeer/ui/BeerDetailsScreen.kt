@@ -17,10 +17,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.corgrimm.punkbeer.R
 import com.corgrimm.punkbeer.models.Amount
 import com.corgrimm.punkbeer.models.Beer
 import com.corgrimm.punkbeer.models.Fermentation
@@ -44,12 +46,11 @@ fun BeerDetailsScreen(beer: Beer) {
                 Column {
                     AsyncImage(
                         model = beer.imageUrl,
-                        contentDescription = null,
+                        contentDescription = "${beer.name} Image",
                         modifier = Modifier
                             .wrapContentWidth()
                             .height(200.dp)
                             .clip(MaterialTheme.shapes.medium)
-                            .background(MaterialTheme.colorScheme.primary)
                     )
 
                     Spacer(modifier = Modifier.height(16.dp))
@@ -76,7 +77,7 @@ fun BeerDetailsScreen(beer: Beer) {
         }
 
         item {
-            SectionHeading("Description")
+            SectionHeading(stringResource(id = R.string.description))
             Text(
                 text = beer.description,
                 style = MaterialTheme.typography.bodyMedium
@@ -86,42 +87,42 @@ fun BeerDetailsScreen(beer: Beer) {
         }
 
         item {
-            SectionHeading("Details")
-            DetailsItem("ABV", "${beer.abv}%")
-            DetailsItem("IBU", beer.ibu.toString())
-            DetailsItem("First Brewed", beer.firstBrewed)
+            SectionHeading(stringResource(id = R.string.details))
+            DetailsItem(stringResource(id = R.string.abv), "${beer.abv}%")
+            DetailsItem(stringResource(id = R.string.ibu), beer.ibu.toString())
+            DetailsItem(stringResource(id = R.string.first_brewed), beer.firstBrewed)
 
             Spacer(modifier = Modifier.height(16.dp))
         }
 
         item {
-            SectionHeading("Target Values")
-            DetailsItem("Target FG", beer.targetFg.toString())
-            DetailsItem("Target OG", beer.targetOg.toString())
+            SectionHeading(stringResource(id = R.string.target_values))
+            DetailsItem(stringResource(id = R.string.target_fg), beer.targetFg.toString())
+            DetailsItem(stringResource(id = R.string.target_og), beer.targetOg.toString())
 
             Spacer(modifier = Modifier.height(16.dp))
         }
 
         item {
-            SectionHeading("Visuals")
-            DetailsItem("EBC", beer.ebc.toString())
-            DetailsItem("SRM", beer.srm.toString())
-            DetailsItem("pH", beer.ph.toString())
+            SectionHeading(stringResource(id = R.string.visuals))
+            DetailsItem(stringResource(id = R.string.ebc), beer.ebc.toString())
+            DetailsItem(stringResource(id = R.string.srm), beer.srm.toString())
+            DetailsItem(stringResource(id = R.string.ph), beer.ph.toString())
 
             Spacer(modifier = Modifier.height(16.dp))
         }
 
         item {
-            SectionHeading("Fermentation")
-            DetailsItem("Attenuation Level", "${beer.attenuationLevel}%")
+            SectionHeading(stringResource(id = R.string.fermentation))
+            DetailsItem(stringResource(id = R.string.attenuation_level), "${beer.attenuationLevel}%")
 
             Spacer(modifier = Modifier.height(16.dp))
         }
 
         item {
-            SectionHeading("Volume")
-            DetailsItem("Volume", "${beer.volume.value} ${beer.volume.unit}")
-            DetailsItem("Boil Volume", "${beer.boilVolume.value} ${beer.boilVolume.unit}")
+            SectionHeading(stringResource(id = R.string.volume))
+            DetailsItem(stringResource(id = R.string.volume), "${beer.volume.value} ${beer.volume.unit}")
+            DetailsItem(stringResource(id = R.string.boil_volume), "${beer.boilVolume.value} ${beer.boilVolume.unit}")
 
             Spacer(modifier = Modifier.height(16.dp))
         }

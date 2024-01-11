@@ -130,5 +130,5 @@ fun PreviewBeerItem() {
         contributedBy = "Sam Mason <samjbmason>"
     )
 
-//    BeerItem(beer = dummyBeer)
+    BeerItem(beer = dummyBeer, {})
 }

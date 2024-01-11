@@ -16,14 +16,12 @@ class PunkBeerRepoImpl(
     private val punkBeerApi: PunkApiService
 ) : PunkBeerRepo {
     override fun beerListFlow() = flow {
-        emit(Resource.Loading())
 
         val beerFlow: Flow<Resource<List<Beer>>> = fetchNetworkResource(api = {
             punkBeerApi.getBeers()
         })
 
         emitAll(beerFlow)
-
     }
 
 }
